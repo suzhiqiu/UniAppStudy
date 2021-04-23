@@ -2,7 +2,9 @@
 	<view class="content">
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
-			<text class="title">{{title}}</text>
+			<text class="title1" v-bind:class="className" v-on:click="open">{{title}}</text>
+			<text class="title2" :class="className" @click="open">{{title}}</text>
+			<text >{{subTitle}}</text>
 		</view>
 	</view>
 </template>
@@ -11,13 +13,22 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				subTitle:'niubi',
+				className:'active',
 			}
 		},
 		onLoad() {
-
+			//
+			setTimeout(()=>{
+				this.title = '修改的标题'
+			},2000);
 		},
 		methods: {
+			open() {
+				console.log('click_open');
+				this.title = '我被点击了'
+			}
 
 		}
 	}
