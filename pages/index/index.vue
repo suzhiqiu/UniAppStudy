@@ -11,7 +11,7 @@
 			<view v-for="(item,index) in arrayTitle" :key="index">{{index+' '+ item}}</view>
 		</view>
 		<view>
-			<view v-for="(item,key1) in arrayTitle2"  v-bind:key="index">{{key1+':'+ item}}</view>
+			<view v-for="(item,key1) in arrayTitle2"  v-bind:key="key1">{{key1+':'+ item}}</view>
 		</view>
 		<view>
 			<input v-model="inputText" />
@@ -24,7 +24,8 @@
 		<text >条件编译1</text>
 		<!-- #endif -->
 		
-		<text  class="colorBg">外部样式处理</text>
+		<text  class="colorBg">条件编译</text>
+		<button @click="clickNextPage">打开新页面</button>
 		
 		<view>
 			<scroll-view class="homescroll" scroll-y="true" @scroll="moniterScroll">
@@ -58,7 +59,9 @@
 				inputText:'',
 			}
 		},
+		//页面加载 viewdidload
 		onLoad() {
+			console.log('生命周期_onLoad');
 			uni.getSystemInfo({
 				success(res) {
 					console.log('res_success:',res);
@@ -75,11 +78,24 @@
 			// 	this.title = '标题1'
 			// },2000);
 		},
+		//页面初次完成 viewwillappear
+		onReady() {
+			console.log('生命周期_onReady');
+		},
+		//viewdidappear
+		onShow() {
+			console.log('生命周期_onShow');
+		},
 		methods: {
 			open() {
 				console.log('click_open');
 				//this.title = '我被点击了'
 				this.showSubTime = !this.showSubTime
+			},
+			clickNextPage() {
+				uni.navigateTo({
+					url:'../cart/cart'
+				})
 			},
 			moniterScroll(e) {
 				console.log(e);
