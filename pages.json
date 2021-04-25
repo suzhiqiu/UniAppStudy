@@ -6,7 +6,17 @@
 				"navigationBarTitleText": "uni-app"
 			}
 		}
-	],
+	    
+        ,{
+            "path" : "components/surebutton/surebutton",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

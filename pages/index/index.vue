@@ -18,10 +18,14 @@
 			<text>当前的值:{{inputText}}</text>
 		</view>
 		<view>
+			<surebutton textColor="red" @change="onChange">确定提交2</surebutton>
+		</view>
+		<view>
 			<scroll-view class="homescroll" scroll-y="true" @scroll="moniterScroll">
-				<view v-for="item in 100">{{item}}</view>
+				<view v-for="item in 1">{{item}}</view>
 			</scroll-view>
 		</view>
+	
 	
 		
 		
@@ -29,7 +33,12 @@
 </template>
 
 <script>
+	import surebutton from '@/components/surebutton/surebutton.vue'
+	
 	export default {
+		components:{
+			surebutton,
+		},
 		data() {
 			return {
 				title: 'Hello',
@@ -55,6 +64,9 @@
 			},
 			moniterScroll(e) {
 				console.log(e);
+			},
+			onChange(e) {
+				console.log('外层点击了'+e);
 			}
 
 		}
