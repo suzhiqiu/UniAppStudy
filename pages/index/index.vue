@@ -13,6 +13,18 @@
 		<view>
 			<view v-for="(item,key) in arrayTitle2">{{key+' '+ item}}</view>
 		</view>
+		<view>
+			<input v-model="inputText" />
+			<text>当前的值:{{inputText}}</text>
+		</view>
+		<view>
+			<scroll-view class="homescroll" scroll-y="true" @scroll="moniterScroll">
+				<view v-for="item in 100">{{item}}</view>
+			</scroll-view>
+		</view>
+	
+		
+		
 	</view>
 </template>
 
@@ -26,6 +38,7 @@
 				showSubTime:false,
 				arrayTitle:['奔驰','宝马','奥迪'],
 				arrayTitle2:{'01':'荣放','02':'奇骏','03':'CRV'},
+				inputText:'',
 			}
 		},
 		onLoad() {
@@ -39,6 +52,9 @@
 				console.log('click_open');
 				//this.title = '我被点击了'
 				this.showSubTime = !this.showSubTime
+			},
+			moniterScroll(e) {
+				console.log(e);
 			}
 
 		}
@@ -46,6 +62,7 @@
 </script>
 
 <style>
+	
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -70,5 +87,9 @@
 	.title {
 		font-size: 36rpx;
 		color: #8f8f94;
+	}
+	.homescroll {
+		height: 500rpx;
+		border: 1rpx #007AFF;
 	}
 </style>
