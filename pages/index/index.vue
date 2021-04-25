@@ -7,6 +7,12 @@
 			<text v-if="showSubTime">{{subTitle}}</text>
 			<text v-else >其他文案</text>
 		</view>
+		<view>
+			<view v-for="(item,index) in arrayTitle">{{index+' '+ item}}</view>
+		</view>
+		<view>
+			<view v-for="(item,key) in arrayTitle2">{{key+' '+ item}}</view>
+		</view>
 	</view>
 </template>
 
@@ -18,6 +24,8 @@
 				subTitle:'niubi',
 				className:'active',
 				showSubTime:false,
+				arrayTitle:['奔驰','宝马','奥迪'],
+				arrayTitle2:{'01':'荣放','02':'奇骏','03':'CRV'},
 			}
 		},
 		onLoad() {
