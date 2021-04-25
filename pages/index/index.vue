@@ -4,7 +4,8 @@
 		<view class="text-area">
 			<text class="title1" v-bind:class="className" v-on:click="open">{{title}}</text>
 			<text class="title2" :class="className" @click="open">{{title}}</text>
-			<text >{{subTitle}}</text>
+			<text v-if="showSubTime">{{subTitle}}</text>
+			<text v-else >其他文案</text>
 		</view>
 	</view>
 </template>
@@ -16,18 +17,20 @@
 				title: 'Hello',
 				subTitle:'niubi',
 				className:'active',
+				showSubTime:false,
 			}
 		},
 		onLoad() {
 			//
-			setTimeout(()=>{
-				this.title = '修改的标题'
-			},2000);
+			// setTimeout(()=>{
+			// 	this.title = '标题1'
+			// },2000);
 		},
 		methods: {
 			open() {
 				console.log('click_open');
-				this.title = '我被点击了'
+				//this.title = '我被点击了'
+				this.showSubTime = !this.showSubTime
 			}
 
 		}
