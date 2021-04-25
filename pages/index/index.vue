@@ -8,10 +8,10 @@
 			<text v-else >其他文案</text>
 		</view>
 		<view>
-			<view v-for="(item,index) in arrayTitle">{{index+' '+ item}}</view>
+			<view v-for="(item,index) in arrayTitle" :key="index">{{index+' '+ item}}</view>
 		</view>
 		<view>
-			<view v-for="(item,key) in arrayTitle2">{{key+' '+ item}}</view>
+			<view v-for="(item,key1) in arrayTitle2"  v-bind:key="index">{{key1+':'+ item}}</view>
 		</view>
 		<view>
 			<input v-model="inputText" />
@@ -20,11 +20,19 @@
 		<view>
 			<surebutton textColor="red" @change="onChange">确定提交2</surebutton>
 		</view>
+		<!-- #ifdef APP-PLUS  -->
+		<text >条件编译1</text>
+		<!-- #endif -->
+		
+		<text  class="colorBg">外部样式处理</text>
+		
 		<view>
 			<scroll-view class="homescroll" scroll-y="true" @scroll="moniterScroll">
-				<view v-for="item in 1">{{item}}</view>
+				<view v-for="(item,index) in 1"  :key="index"  >{{item}}</view>
 			</scroll-view>
 		</view>
+		
+	
 	
 	
 		
@@ -51,6 +59,17 @@
 			}
 		},
 		onLoad() {
+			uni.getSystemInfo({
+				success(res) {
+					console.log('res_success:',res);
+				},
+				fail(res) {
+					console.log('res_falil:',res);
+				},
+				complete(res) {
+					console.log('res_complete:',res);
+				}
+			})
 			//
 			// setTimeout(()=>{
 			// 	this.title = '标题1'
@@ -74,6 +93,7 @@
 </script>
 
 <style>
+	@import './index.css';
 	
 	.content {
 		display: flex;
