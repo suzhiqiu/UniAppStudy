@@ -6,6 +6,13 @@
 
 <script>
 	export default {
+		beforeCreate() {
+			console.log('commponent_beforeCreate');
+		},
+		created(){
+			console.log('commponent_create');
+		},
+
 		props:{
 			textColor:{
 				type:String,

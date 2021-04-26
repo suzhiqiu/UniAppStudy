@@ -86,6 +86,10 @@
 		onShow() {
 			console.log('生命周期_onShow');
 		},
+		//
+		onTabItemTap() {
+			//console.log('生命周期_onTabItemTap');
+		}
 		methods: {
 			open() {
 				console.log('click_open');

@@ -7,8 +7,9 @@
 			}
 		}
 	    
+        
         ,{
-            "path" : "components/surebutton/surebutton",
+            "path" : "pages/cart/cart",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -17,7 +18,7 @@
             
         }
         ,{
-            "path" : "pages/cart/cart",
+            "path" : "pages/my/my",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -31,5 +32,30 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"color":"#007AFF",
+		"selectedColor":"#DD524D",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"static/logo.png",
+				"selectedIconPath":"static/logo_select.png"
+			},
+			{
+				"pagePath":"pages/cart/cart",
+				"text":"购物车",
+				"iconPath":"static/logo.png",
+				"selectedIconPath":"static/logo_select.png"
+			},
+			{
+				"pagePath":"pages/my/my",
+				"text":"我的",
+				"iconPath":"static/logo.png",
+				"selectedIconPath":"static/logo_select.png"
+			}
+		]
 	}
 }
