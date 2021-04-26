@@ -1,8 +1,8 @@
 <template>
-	<view class="content">
+	<view class="content box">
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
-			<text class="title1" v-bind:class="className" v-on:click="open">{{title}}</text>
+			<text class="title" v-bind:class="className" v-on:click="open">{{title}}</text>
 			<text class="title2" :class="className" @click="open">{{title}}</text>
 			<text v-if="showSubTime">{{subTitle}}</text>
 			<text v-else >其他文案</text>
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+	// 插件:https://ext.dcloud.net.cn/
 	import surebutton from '@/components/surebutton/surebutton.vue'
 	
 	export default {
@@ -89,7 +90,7 @@
 		//
 		onTabItemTap() {
 			//console.log('生命周期_onTabItemTap');
-		}
+		},
 		methods: {
 			open() {
 				console.log('click_open');
@@ -112,34 +113,37 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	@import './index.css';
-	
+	$width:200rpx;
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		//父级
+		&.box{
+			border: 1px red solid;
+		}
+		.logo {
+			height: $width;
+			width: $width;
+			margin-top: 200rpx;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 50rpx;
+		}
+		.text-area {
+			display: flex;
+			justify-content: center;
+			.title {
+				font-size: 36rpx;
+				color: #8f8f94;
+			}
+		}
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
 
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 	.homescroll {
 		height: 500rpx;
 		border: 1rpx #007AFF;
