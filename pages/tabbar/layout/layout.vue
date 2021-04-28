@@ -1,8 +1,6 @@
 <template>
-	<view >
-		
-	<text>首页</text>
-		
+	<view>
+		<text>布局的页面</text>
 	</view>
 </template>
 
