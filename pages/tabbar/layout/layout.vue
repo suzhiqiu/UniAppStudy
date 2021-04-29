@@ -5,10 +5,10 @@
 		<text class="view2">view2</text>
 		<text class="view3">view3</text>
 		<text class="view4">view4</text>
-<!-- 	
+	
 		<text class="view5">view5</text>
 		<text class="view6">view6</text>
-		 -->
+		
 	</view>
 </template>
 
@@ -36,11 +36,23 @@
 		
 		//2.stretch
 		//需要子view 不能设置高度
-		 align-items: stretch;
+		//align-items: stretch;
+	
+		//3.换行产生的多行。单行设置无效
+		//
+		//align-items 失效了 得改由 align-content。多了space-between
+		// flex-wrap:wrap;
+		// align-items: flex-start;//无效
+		// align-content: space-between;
+		
+		//4.flex-flow
+		// flex-flow: row wrap; //换行有间须 再下面的布局
+		// align-content: flex-start;
+		
 		
 		
 	 //    flex-direction: column;
-		 justify-content: space-around;
+		// justify-content: space-around;
 		
 		// align-items: center;
 		
