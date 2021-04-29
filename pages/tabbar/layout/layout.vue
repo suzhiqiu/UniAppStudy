@@ -4,10 +4,10 @@
 		<text class ="view1">view1</text>
 		<text class="view2">view2</text>
 		<text class="view3">view3</text>
-		<text class="view4">view4</text>
+<!-- 		<text class="view4">view4</text>
 	
-<!-- 		<text class="view5">view5</text>
-		<text class="view6">view6</text> -->
+ 		<text class="view5">view5</text>
+		<text class="view6">view6</text>  -->
 		
 	</view>
 </template>
@@ -55,9 +55,13 @@
 		
 		
 		//6.align-self控制子项自己再侧轴的排列方式
+		//align-items: flex-start;默认
+		//单独改变子元素的布局方式  覆盖align-items属性
+		//
 		
 		
 		//7.order属性定义排列顺序
+		//默认是0
 		
 
 		
@@ -82,7 +86,7 @@
 		// 	background-color: green;
 		// }
 		
-		//=================
+		//=================align-self、order
 		.view1 {
 			width: 100rpx;
 			height: 100rpx;
@@ -92,27 +96,46 @@
 			width: 100rpx;
 			height: 100rpx;
 			background-color: yellow;
+			order: 2;
 		}
 		.view3 {
 			width: 100rpx;
 			height: 100rpx;
 			background-color: green;
+			align-self:flex-end;
 		}
-		.view4 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: orange;
-		}
-		.view5 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: #3F536E;
-		}
-		.view6 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: #6E6E6E;
-		}
+		
+		//
+		// .view1 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: blue;
+		// }
+		// .view2 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: yellow;
+		// }
+		// .view3 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: green;
+		// }
+		// .view4 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: orange;
+		// }
+		// .view5 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: #3F536E;
+		// }
+		// .view6 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: #6E6E6E;
+		// }
 	}
 
 </style>
