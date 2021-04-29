@@ -6,8 +6,8 @@
 		<text class="view3">view3</text>
 		<text class="view4">view4</text>
 	
-		<text class="view5">view5</text>
-		<text class="view6">view6</text>
+<!-- 		<text class="view5">view5</text>
+		<text class="view6">view6</text> -->
 		
 	</view>
 </template>
@@ -49,16 +49,40 @@
 		// flex-flow: row wrap; //换行有间须 再下面的布局
 		// align-content: flex-start;
 		
+		//===================子项常见属性
+		//5.flex 子项目的占份数 默认是0  cool
+		//分配的是剩余空间。 如果空间满了,就保持不变了。
 		
 		
-	 //    flex-direction: column;
-		// justify-content: space-around;
+		//6.align-self控制子项自己再侧轴的排列方式
 		
-		// align-items: center;
+		
+		//7.order属性定义排列顺序
+		
+
 		
 		width: 500rpx;
 		height: 500rpx;
 		background-color: #F07373;
+		
+		// =================flex:1 占用比
+		// .view1 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: blue;
+		// }
+		// .view2 {
+		// 	height: 100rpx;
+		// 	background-color: yellow;
+		// 	flex:1;
+		// }
+		// .view3 {
+		// 	width: 100rpx;
+		// 	height: 100rpx;
+		// 	background-color: green;
+		// }
+		
+		//=================
 		.view1 {
 			width: 100rpx;
 			height: 100rpx;
