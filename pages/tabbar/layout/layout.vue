@@ -63,6 +63,7 @@
 		//7.order属性定义排列顺序
 		//默认是0
 		
+		//8.固定的盒子必须有宽度
 
 		
 		width: 500rpx;
@@ -87,25 +88,6 @@
 		// }
 		
 		//=================align-self、order
-		.view1 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: blue;
-		}
-		.view2 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: yellow;
-			order: 2;
-		}
-		.view3 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: green;
-			align-self:flex-end;
-		}
-		
-		//
 		// .view1 {
 		// 	width: 100rpx;
 		// 	height: 100rpx;
@@ -115,12 +97,36 @@
 		// 	width: 100rpx;
 		// 	height: 100rpx;
 		// 	background-color: yellow;
+		// 	order: 2;
 		// }
 		// .view3 {
 		// 	width: 100rpx;
 		// 	height: 100rpx;
 		// 	background-color: green;
+		// 	align-self:flex-end;
 		// }
+		
+		//=================align-self、order
+		.view1 {
+			width: 100rpx;
+			height: 100rpx;
+			background-color: blue;
+			/*固定的盒子应该有宽度
+			跟父级没有关系，是以屏幕为主的。
+			
+			*/
+			position: fixed;
+		}
+		.view2 {
+			width: 100rpx;
+			height: 100rpx;
+			background-color: yellow;
+		}
+		.view3 {
+			width: 100rpx;
+			height: 100rpx;
+			background-color: green;
+		}
 		// .view4 {
 		// 	width: 100rpx;
 		// 	height: 100rpx;
