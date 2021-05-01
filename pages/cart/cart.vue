@@ -1,6 +1,9 @@
 <template>
 	<view>
 		<text>购物车页面</text>
+		<button :data-index="12" @click1="clickNextPage(1,$event)">点击1</button>
+		<button @click="clickNextPage(2,$event)">点击2</button>
+		<surebutton textColor ="red" @click="clickCommit">我爱罗</surebutton>
 	</view>
 </template>
 
@@ -8,11 +11,19 @@
 	export default {
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
-			
+			//事件传值:
+			clickNextPage(index,event) {
+				console.log(event.currentTarget.dataset.index);
+				console.log(index,event);
+			},
+			clickCommit(text){
+				console.log('提交',text);
+			},
+
 		}
 	}
 </script>
