@@ -10,6 +10,9 @@
 			console.log('App Hide')
 			//this.$store.dispatch()
 		},
+		globalData:{
+			customURL2:'www.google.com',
+		}
 		
 	}
 </script>

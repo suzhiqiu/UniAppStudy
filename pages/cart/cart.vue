@@ -21,7 +21,12 @@
 				console.log(index,event);
 			},
 			clickCommit(text){
-				console.log('提交',text);
+				//console.log('提交',text);
+				console.log('全局数据1:',this.customURL);
+				console.log('全局数据2:',getApp().globalData.customURL2);
+				//vuex  全局数据3
+				//数据存储  全局数据4
+				
 			},
 
 		}
