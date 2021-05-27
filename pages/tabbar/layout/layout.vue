@@ -1,14 +1,8 @@
 <template>
-	<view  class="container">
-
-		<text class ="view1">view1</text>
-		<text class="view2">view2</text>
-		<text class="view3">view3</text>
-<!-- 		<text class="view4">view4</text>
-	
- 		<text class="view5">view5</text>
-		<text class="view6">view6</text>  -->
-		
+	<view class="container">
+		<text class="view1">view1_{{getLogin1}}</text>
+		<text class="view2">view2_{{getLogin2()}}</text>
+		<button @click="clickLogin">点击1</button>
 	</view>
 </template>
 
@@ -16,132 +10,60 @@
 	export default {
 		data() {
 			return {
-				
+				login: false,
 			}
 		},
+		computed: {
+			getLogin1() {
+				if (this.login) {
+					return "compute--登录的_火影";
+				} else {
+					return "compute--未登录_我爱罗";
+				}
+			}
+
+		},
 		methods: {
-			
-		}
+
+			clickLogin() {
+				console.log('点击登录...');
+				this.login = !this.login;
+			},
+			getLogin2() {
+				if (this.login) {
+					return "method--登录的_火影";
+				} else {
+					return "method--未登录_我爱罗";
+				}
+			}
+
+		},
 	}
 </script>
 
 <style lang="scss">
 	.container {
 		display: flex;
-		//1.决定子布局的位置和排列  默认值:
-		// flex-direction: row;// 默认水平
-		// justify-content: flex-start;//靠前
-		// align-items: flex-start;//靠前
-		// flex-wrap: nowrap;//不换行
-		
-		//2.stretch
-		//需要子view 不能设置高度
-		//align-items: stretch;
-	
-		//3.换行产生的多行。单行设置无效
-		//
-		//align-items 失效了 得改由 align-content。多了space-between
-		// flex-wrap:wrap;
-		// align-items: flex-start;//无效
-		// align-content: space-between;
-		
-		//4.flex-flow
-		// flex-flow: row wrap; //换行有间须 再下面的布局
-		// align-content: flex-start;
-		
-		//===================子项常见属性
-		//5.flex 子项目的占份数 默认是0  cool
-		//分配的是剩余空间。 如果空间满了,就保持不变了。
-		
-		
-		//6.align-self控制子项自己再侧轴的排列方式
-		//align-items: flex-start;默认
-		//单独改变子元素的布局方式  覆盖align-items属性
-		//
-		
-		
-		//7.order属性定义排列顺序
-		//默认是0
-		
-		//8.固定的盒子必须有宽度
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: green;
 
-		
-		width: 500rpx;
 		height: 500rpx;
-		background-color: #F07373;
-		
-		// =================flex:1 占用比
-		// .view1 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: blue;
-		// }
-		// .view2 {
-		// 	height: 100rpx;
-		// 	background-color: yellow;
-		// 	flex:1;
-		// }
-		// .view3 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: green;
-		// }
-		
-		//=================align-self、order
-		// .view1 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: blue;
-		// }
-		// .view2 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: yellow;
-		// 	order: 2;
-		// }
-		// .view3 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: green;
-		// 	align-self:flex-end;
-		// }
-		
+		width: 500rpx;
+
 		//=================align-self、order
 		.view1 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: blue;
-			/*固定的盒子应该有宽度
-			跟父级没有关系，是以屏幕为主的。
-			
-			*/
-			position: fixed;
+			color: blue;
+			font-size: 28rpx;
+			font-weight: 400rpx;
 		}
-		.view2 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: yellow;
-		}
-		.view3 {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: green;
-		}
-		// .view4 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: orange;
-		// }
-		// .view5 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: #3F536E;
-		// }
-		// .view6 {
-		// 	width: 100rpx;
-		// 	height: 100rpx;
-		// 	background-color: #6E6E6E;
-		// }
-	}
 
+		.view2 {
+			color: yellow;
+			font-size: 28rpx;
+			font-weight: 400rpx;
+		}
+
+	}
 </style>

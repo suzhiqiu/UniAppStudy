@@ -4,6 +4,8 @@
 		<button :data-index="12" @click1="clickNextPage(1,$event)">点击1</button>
 		<button @click="clickNextPage(2,$event)">点击2</button>
 		<surebutton textColor ="red" @click="clickCommit">我爱罗</surebutton>
+		<!-- 插槽 整个标签-->
+		<surebutton textColor ="red" @click="clickCommit"><button>我哈哈</button></surebutton>
 	</view>
 </template>
 
