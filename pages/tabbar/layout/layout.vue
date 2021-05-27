@@ -7,6 +7,8 @@
 			<text class="view5">我是子组件2</text>
 			<view class="view6">我是子组件3</view>
 			<text class="view7">我是子组件4</text>
+			<text class="view7">我是子组件5</text>
+			<text class="view7">我是子组件6</text>
 		</view>
 		<button @click="clickLogin">点击3</button>
 		
