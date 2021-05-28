@@ -2,15 +2,27 @@
 	<view class="container">
 		<text class="view1">view1_{{getLogin1}}</text>
 		<text class="view2">view2_{{getLogin2()}}</text>
+	    <button @click="clickLogin">点击3</button>
+		<text>普通布局</text>
 		<view class="view3">
-			<text class="view4">我是子组件1</text>
-			<text class="view5">我是子组件2</text>
-			<view class="view6">我是子组件3</view>
-			<text class="view7">我是子组件4</text>
-			<text class="view7">我是子组件5</text>
-			<text class="view7">我是子组件6</text>
+			<text class="view11">我是子组件1</text>
+			<text class="view12">我是子组件2</text>
+			<view class="view13">我是子组件3</view>
+			<text class="view14">我是子组件4</text>
+			<text class="view15">我是子组件5</text>
+			<text class="view16">我是子组件66666</text>
 		</view>
-		<button @click="clickLogin">点击3</button>
+		<text>flex布局</text>
+		<view class="view4">
+			<text class="view11">我是子组件1</text>
+			<text class="view12">我是子组件2</text>
+			<view class="view13">我是子组件3</view>
+			<text class="view14">我是子组件4</text>
+			<text class="view15">我是子组件5</text>
+			<text class="view16">我是子组件6</text>
+		</view>
+		
+	
 		
 	
 	</view>
@@ -61,10 +73,10 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background-color: green;
+		background-color: white;
 
-		height: 500rpx;
-		width: 500rpx;
+		// height: 500rpx;
+		// width: 500rpx;
 
 		//=================align-self、order
 		.view1 {
@@ -81,13 +93,31 @@
 		
 		.view3 {
 			background-color: red;
+			height: 200rpx;
 		
 		}
 		.view4 {
+			display: flex;
+			background-color: red;
+			height: 200rpx;
+		}
+		.view11 {
+			background-color: yellow;
+		}
+		.view12 {
+			background-color: green;
+		}
+		.view13 {
+			background-color: pink;
+		}
+		.view14 {
 			background-color: blue;
 		}
-		.view5 {
+		.view15 {
 			background-color: yellow;
+		}
+		.view16 {
+			background-color: orange;
 		}
 
 	}
