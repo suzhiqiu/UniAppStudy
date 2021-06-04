@@ -7,19 +7,20 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
 	//数据源
 	state:{
-		historyList:[]
+		userinfo:{},
 	},
 	//修改数据？
 	mutations:{
-		SET_HISTORY_LIST(state,history){
-			state.historyList = history;
-		},
+		setUserInfo(state,data) {
+			console.log('store_setUserInfo_1',data);
+			state.userinfo = data;
+			console.log('store_setUserInfo_2',state.userinfo);
+		}
+	
 	},
 	//
 	actions: {
-		set_history({commit,state},history) {
-			commit('SET_HISTORY_LIST',history);//调用 mutations的方法
-		},
+	
 	}
 	
 })
